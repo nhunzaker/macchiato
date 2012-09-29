@@ -1,6 +1,14 @@
-# Instaframe
+# Express Boilerplate
 
-Currently, this app takes photos from the Viget Instagram account and displays them as a photo album. Future releases should add the ability to authenticate locally for a more personalized album.
+Be it basic buildouts, or fun node experiments, this is my standard 
+boilerplate for such projects. I use [ejs](https://github.com/visionmedia/ejs) 
+for templating and [mocha](https://github.com/visionmedia/mocha) for testing. 
+Asset compilation is handled by the ever wonderful [grunt.js](http://gruntjs.com).
+
+### Requirements
+
+- [node.js](http://nodejs.org/)
+- [TJ Holowaychuk's fork of jscoverage](https://github.com/visionmedia/node-jscoverage)
 
 ### Build it
 
@@ -10,12 +18,25 @@ Currently, this app takes photos from the Viget Instagram account and displays t
 
 `npm test`
 
+### Check test coverage
+
+`make coverage`
+
 ### Start it
 
 `npm start`
 
----
+### Compile assets
 
-### Roadmap
+`grunt`
 
-Currently we're generating `myfeed` calls in `Instagrammar` using a manually harvested auth token. I'd love to see the some sort of clientside badge that does this for us.
+or
+
+`grunt watch`
+
+### Host it
+
+``` shell
+heroku create
+git push heroku master
+```

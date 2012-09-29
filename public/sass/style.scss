@@ -1,22 +1,7 @@
 /*
- * Vigeframe
- *
- * Nate Hunzaker, Viget Labs
- *
- * http://vigeframe.herokuapp.com
+ * Express Boilerplate
+ * Nate Hunzaker
  */
 
 @import "compass";
 @import "vendor/normalize";
-@import "shared/type";
-
-body, html {
-  background: url("/images/bgnoise.png");
-  height: 100%;
-  margin: 0 auto;
-
-  @include box-shadow( inset 0 0 20px rgba(0,0,0,0.25) );
-}
-
-@import "components/footer";
-@import "components/vigeframe";
