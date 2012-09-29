@@ -1,0 +1,125 @@
+// The Vigeframe!
+// -------------------------------------------------- //
+
+.vigeframe {
+  padding: 200px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.vigeframe-inner {
+  left: 0;
+  position: relative;
+  white-space: nowrap;
+  
+  @include transition(0.7s all linear);
+}
+
+.gram {
+  height: auto;
+  position: relative;
+
+  @include box-shadow(
+    0 0 10px rgba(0,0,0,0.15), 
+    0 12px 8px rgba(0,0,0,0.25) 
+  );
+
+  @include transition(all 0.6s linear);
+
+  @include transform(
+    translate(-280px, 0) 
+    perspective(600px) 
+    rotateY(15deg)
+  );
+
+}
+
+.gram.after {
+
+  @include transform(
+    translate(280px, 0) 
+    perspective(600px) 
+    rotateY(-15deg)
+  );
+
+}
+
+.gram.selected {
+  @include transform( scale(2) );
+  z-index: 10000;
+}
+
+
+// Medium screens
+// -------------------------------------------------- //
+
+@media screen and (max-width: 646px) {
+  .vigeframe-inner .gram { width: 250px; }
+}
+
+@media screen and (max-height: 800px) {
+
+  .vigeframe {
+    padding-top: 150px;
+  }
+
+  .vigeframe-inner .gram { 
+    width: 230px; 
+  }
+
+}
+
+// Small screens
+// -------------------------------------------------- //
+
+@media screen and (max-width: 421px) {
+
+  .vigeframe-inner .gram { 
+    width: 150px; 
+  }
+
+}
+
+@media screen and (max-height: 621px) {
+
+  .vigeframe-inner .gram { 
+    width: 150px; 
+  }
+
+}
+
+
+// Abysmally small screens
+// -------------------------------------------------- //
+
+@media screen and (max-width: 340px) {
+
+  .vigeframe-inner .gram { 
+    width: 130px; 
+  }
+
+}
+
+@media screen and (max-height: 500px) {
+
+  .vigeframe {
+    padding-top: 75px;
+  }
+  
+  .vigeframe-inner .gram { 
+    width: 110px; 
+  }
+
+}
+
+@media screen and (max-height: 320px) {
+
+  .vigeframe {
+    padding-top: 65px;
+  }
+  
+  .vigeframe-inner .gram { 
+    width: 80px; 
+  }
+
+}
