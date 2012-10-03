@@ -3,7 +3,9 @@
 A simple html builder for testing.
 
 ``` js
-macchiato("article.post > header.post-title", "Macchiato").root("p, p, p", "Is smooth", "like a good", "cup of coffee").serve()
+macchiato("article.post > header.post-title", "Macchiato")
+.root("p, p, p", "Is smooth", "like a good", "cup of coffee")
+.serve()
 ```
 
 becomes:
