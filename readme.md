@@ -22,7 +22,7 @@ macchiato("article.post > header.post-title", "Macchiato").root("p", "Is smooth 
 ---
 
 ``` js
-macchiato("section.post-container")("header")("h2", "Cool no?").set({ "class" : "post-title" });
+macchiato("section.post-container")("header")("h2", "Cool no?").set({ "class" : "post-title" }).serve();
 ```
 ``` html
 <section class="post-container">
@@ -35,7 +35,7 @@ macchiato("section.post-container")("header")("h2", "Cool no?").set({ "class" : 
 ---
 
 ``` js
-macchiato("ul.list > li, li, li", "You can do lists", "For fun and profit", "And good coffee");
+macchiato("ul.list > li, li, li", "You can do lists", "For fun and profit", "And good coffee").serve();
 ```
 ``` html
 
