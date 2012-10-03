@@ -138,7 +138,7 @@ macchiato.trim = function(str, characters) {
 };
 
 macchiato.isID = function(str) {
-    return (/\#/i).test(str);
+    return (/\#/).test(str);
 };
 
 macchiato.isClass = function(str) {
