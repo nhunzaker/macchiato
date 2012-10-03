@@ -7,9 +7,6 @@ A simple html builder for testing.
 ``` js
 macchiato("article.post > header.post-title", "Macchiato").root("p", "Is smooth like coffee").serve()
 ```
-
-becomes:
-
 ``` html
 <article class="post">
 
@@ -27,9 +24,6 @@ becomes:
 ``` js
 macchiato("section.post-container")("header")("h2", "Cool no?").set({ "class" : "post-title" });
 ```
-
-becomes
-
 ``` html
 <section class="post-container">
     <header>
@@ -43,9 +37,6 @@ becomes
 ``` js
 macchiato("ul.list > li, li, li", "You can do lists", "For fun and profit", "And good coffee");
 ```
-
-becomes
-
 ``` html
 
 <ul class="list">
@@ -53,4 +44,16 @@ becomes
     <li>For fun and profit</li>
     <li>And good coffee</li>
 </ul>
+```
+---
+
+``` js
+var body = macchiato("p, p", "Hello world", "Welcome to Macchiato!").serve();
+var container = macchiato("section").pour(body);
+```
+``` html
+<section>
+    <p>Hello world</p>
+    <p>Welcome to Macchiato!</p>
+</section>
 ```
