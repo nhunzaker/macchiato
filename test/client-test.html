@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mocha Tests</title>
+
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/grunt-mocha/tasks/mocha/mocha-helper.js" type="text/javascript" charset="utf-8"></script>
+    
+    <script>mocha.setup('bdd')</script>
+
+    <script src="../src/macchiato.js"></script>
+    <script src="macchiato-test.js"></script>
+
+  </head>
+
+  <body>
+
+    <div id="mocha"></div>
+
+    <script>
+      chai.should();
+      var expect = chai.expect;
+      var assert = chai.assert;
+      mocha.run();
+    </script>
+
+  </body>
+
+</html>
