@@ -17,9 +17,7 @@ becomes:
         Macchiato
     </header>
     
-    <p>Is Smooth</p>    
-    <p>like a good</p>    
-    <p>cup of coffee</p>    
+    <p>Is smooth like coffee</p>    
     
 </article>
 ```
