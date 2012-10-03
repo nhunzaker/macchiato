@@ -49,7 +49,7 @@ macchiato("ul.list > li, li, li", "You can do lists", "For fun and profit", "And
 
 ``` js
 var body = macchiato("p, p", "Hello world", "Welcome to Macchiato!").serve();
-var container = macchiato("section").pour(body);
+var container = macchiato("section").pour(body).serve
 ```
 ``` html
 <section>
