@@ -27,6 +27,16 @@
                 assert.equal(el.tagName, "DIV");
             });
 
+            it ("can add existing dom elements", function() {
+                
+                var el = macchiato("p", "howdy").out();
+                var el2 = macchiato("div").pour(el).out();
+
+                assert.equal(el2.children[0].innerHTML, "howdy");
+                assert.equal(el2.children[0].tagName, "P");
+
+            });
+
             it ("can add nested elements using the \">\" character", function() {
 
                 var el = macchiato().append("article > header > h2").serve();

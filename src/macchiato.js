@@ -43,10 +43,16 @@ function macchiato() {
         return fn;
     };
 
-    fn.append = function(str, html, html__) {
+    fn.append = fn.pour = function(str, html, html__) {
+
+        if (typeof str === 'object') {
+            out.appendChild(str);
+            return fn;
+        }
 
         var elements = str.split(">");
         var child;
+
 
         while (elements.length) {
 
@@ -55,7 +61,6 @@ function macchiato() {
                 className = "",
                 idName = "",
                 tmp;
-
 
             if (children.length > 1) {
                 var text = Array.apply(null, arguments).slice(1);
@@ -123,7 +128,7 @@ function macchiato() {
         return fn;
     };
 
-    fn.serve = function() {
+    fn.serve = fn.out = function() {
         return out;
     };
 
