@@ -1,7 +1,7 @@
 function macchiato() {
 
-    var out = null;
-    var current = null;
+    var out = document.createDocumentFragment();
+    var current = out;
     var slice = Array.prototype.slice;
 
     var trim = macchiato.trim;
@@ -46,13 +46,12 @@ function macchiato() {
     fn.append = fn.pour = function(str, html, html__) {
 
         if (typeof str === 'object') {
-            out.appendChild(str);
+            current.appendChild(str);
             return fn;
         }
 
         var elements = str.split(">");
         var child;
-
 
         while (elements.length) {
 
@@ -85,13 +84,8 @@ function macchiato() {
 
             child = document.createElement(branch);
 
-            if (current) {
-                current.appendChild(child);
-                current = child;
-            } else {
-                out = child;						
-                current = out;
-            }
+            current.appendChild(child);
+            current = child;
 
             fn.set("class", className);
             fn.set("id", idName);
@@ -119,7 +113,13 @@ function macchiato() {
     };
     
     fn.root = function() {
-        current = out;
+
+        if (out.childNodes.length > 1) {
+            current = out;
+        } else {
+            current = out.childNodes[0];
+        }
+
         return fn.apply(fn, arguments);
     };
     
@@ -129,7 +129,11 @@ function macchiato() {
     };
 
     fn.serve = fn.out = function() {
-        return out;
+        if (out.childNodes.length > 1) {
+            return out;
+        } else {
+            return out.childNodes[0];
+        }
     };
 
     return fn.apply(fn, arguments);
