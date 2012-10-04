@@ -1,6 +1,6 @@
 (function(macchiato) {
 
-    describe ("Macchiato", function() {
+    describe ("Macchiato Unit Tests", function() {
 
         it ("#trim - can trim text", function() {
             macchiato.trim("   foobar").should.equal("foobar");

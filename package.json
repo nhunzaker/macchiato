@@ -28,7 +28,7 @@
 
   "scripts": {
     "start" : "node src/main",
-    "test" : "mocha test --reporter spec"
+    "test" : "open test/client-test.html"
   }
 
 }
